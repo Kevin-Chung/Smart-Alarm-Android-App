@@ -1,4 +1,4 @@
-package mobi.smartalarm;
+package mobi.smartalarm.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class AlarmsList extends AppCompatActivity {
+import mobi.smartalarm.R;
+
+public class AlarmsListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
