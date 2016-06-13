@@ -44,14 +44,14 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Start Time"
+                    android:text="Location"
                     android:textSize="20sp"
                     android:layout_alignParentLeft="true"
                     android:id="@+id/startTime"/>
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:text="End Time"
+                    android:text="Arrival Time"
                     android:textSize="20sp"
                     android:layout_toRightOf="@id/startTime"/>
                 <Switch
