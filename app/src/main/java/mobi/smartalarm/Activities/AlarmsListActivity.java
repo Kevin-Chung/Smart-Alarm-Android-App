@@ -1,17 +1,31 @@
 package mobi.smartalarm.Activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import mobi.smartalarm.ListAdapters.AlarmListAdapter;
+import mobi.smartalarm.Models.Alarm;
 import mobi.smartalarm.R;
 
 public class AlarmsListActivity extends AppCompatActivity {
+
+    RecyclerView alarmList;
+    ArrayList<Alarm> alarms;
+    LinearLayoutManager layoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +33,23 @@ public class AlarmsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alarms_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Context context = this;
+
+        alarms = initAlarms();
+        Log.d("inside","alarmlistactivity");
+        alarmList = (RecyclerView) findViewById(R.id.alarm_list);
+
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        alarmList.setLayoutManager(layoutManager);
+
+        alarmList.setAdapter(new AlarmListAdapter(alarms,context));
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        alarmList.setHasFixedSize(true);
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +59,14 @@ public class AlarmsListActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public ArrayList<Alarm> initAlarms(){
+        ArrayList<Alarm> alarmList = new ArrayList<>();
+        for(int i = 0; i < 10; i++){
+            alarmList.add(new Alarm("name "+i,"Desired arrival time"+i, "Expected ring time: "+i,"days:" +i));
+        }
+        return alarmList;
     }
 
     @Override

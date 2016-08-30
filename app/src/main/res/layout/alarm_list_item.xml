@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        card_view:cardCornerRadius="1dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_alarm_on_black_48dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/alarm_icon"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"
+                    android:textSize="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/alarm_name"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TIME"
+                    android:id="@+id/alarm_time"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="14dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hold"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/alarm_activate_time"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:id="@+id/delete_alarm"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="s m tu w thu f s"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/alarm_days"
+                android:layout_margin="10dp"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
