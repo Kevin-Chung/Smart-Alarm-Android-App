@@ -2,7 +2,6 @@ package mobi.smartalarm.ListAdapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,21 +24,21 @@ public class AlarmListAdapter extends RecyclerView.Adapter<AlarmListAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView alarmName, alarmArrivalTime, alarmDays, alarmActivateTime;
+        TextView alarmName, alarmArrivalTime, alarmDays, alarmRingTime;
         ImageView alarmIcon;
 
         public ViewHolder(View v) {
             super(v);
             alarmName = (TextView) v.findViewById(R.id.alarm_name);
-            alarmArrivalTime = (TextView) v.findViewById(R.id.alarm_time);
+            alarmArrivalTime = (TextView) v.findViewById(R.id.alarm_arrival_time);
             alarmDays = (TextView) v.findViewById(R.id.alarm_days);
-            alarmActivateTime = (TextView) v.findViewById(R.id.alarm_activate_time);
+            alarmRingTime = (TextView) v.findViewById(R.id.alarm_ring_time);
         }
         public void bind(Alarm data){
-            alarmName.setText(data.getAlarmName()+" hey");
-            alarmArrivalTime.setText(data.getActivateTime()+" yo");
-            alarmDays.setText(data.getAlarmDays()+" hi");
-            alarmActivateTime.setText(data.getActivateTime());
+            alarmName.setText(data.getAlarmName());
+            alarmArrivalTime.setText(data.getArrivalTime());
+            alarmDays.setText(data.getAlarmDays());
+            alarmRingTime.setText(data.getRingTime());
         }
     }
 

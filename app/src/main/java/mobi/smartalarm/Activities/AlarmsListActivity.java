@@ -1,6 +1,7 @@
 package mobi.smartalarm.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,12 +20,13 @@ import java.util.ArrayList;
 import mobi.smartalarm.ListAdapters.AlarmListAdapter;
 import mobi.smartalarm.Models.Alarm;
 import mobi.smartalarm.R;
+import mobi.smartalarm.Utils.RequestCodes;
 
 public class AlarmsListActivity extends AppCompatActivity {
 
-    RecyclerView alarmList;
-    ArrayList<Alarm> alarms;
-    LinearLayoutManager layoutManager;
+    private RecyclerView alarmList;
+    private ArrayList<Alarm> alarms;
+    private LinearLayoutManager layoutManager;
 
 
     @Override
@@ -50,13 +52,15 @@ public class AlarmsListActivity extends AppCompatActivity {
 
 
 
+        // create new fab button and bind to the view.
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_alarm);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //add action listener for when button is clicked. Launch activity to create new alarms
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent addActivityIntent = new Intent(AlarmsListActivity.this, CreateAlarm.class);
+                startActivityForResult(addActivityIntent, RequestCodes.createAlarmCode);
             }
         });
     }
@@ -64,7 +68,7 @@ public class AlarmsListActivity extends AppCompatActivity {
     public ArrayList<Alarm> initAlarms(){
         ArrayList<Alarm> alarmList = new ArrayList<>();
         for(int i = 0; i < 10; i++){
-            alarmList.add(new Alarm("name "+i,"Desired arrival time"+i, "Expected ring time: "+i,"days:" +i));
+            alarmList.add(new Alarm("name "+i,"Expected arrival time"+i, "Expected ring time: "+i,"s m t w t f s"));
         }
         return alarmList;
     }

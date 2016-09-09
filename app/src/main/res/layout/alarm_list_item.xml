@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TIME"
-                    android:id="@+id/alarm_time"
+                    android:id="@+id/alarm_arrival_time"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center_vertical"
                     android:textSize="14dp"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:text="hold"
                     android:layout_marginTop="5dp"
-                    android:id="@+id/alarm_activate_time"
+                    android:id="@+id/alarm_ring_time"
                     android:textSize="14dp"/>
             </LinearLayout>
         </LinearLayout>

@@ -6,13 +6,13 @@ package mobi.smartalarm.Models;
 public class Alarm {
     private String alarmName;
     private String arrivalTime;
-    private String activateTime;
+    private String ringTime;
     private String alarmDays;
 
-    public Alarm(String alarmName, String arrivalTime, String activateTime, String alarmDays) {
+    public Alarm(String alarmName, String arrivalTime, String ringTime, String alarmDays) {
         this.alarmName = alarmName;
         this.arrivalTime = arrivalTime;
-        this.activateTime = activateTime;
+        this.ringTime = ringTime;
         this.alarmDays = alarmDays;
 
     }
@@ -33,12 +33,12 @@ public class Alarm {
         this.arrivalTime = arrivalTime;
     }
 
-    public String getActivateTime() {
-        return activateTime;
+    public String getRingTime() {
+        return ringTime;
     }
 
-    public void setActivateTime(String activateTime) {
-        this.activateTime = activateTime;
+    public void setRingTime(String ringTime) {
+        this.ringTime = ringTime;
     }
 
     public String getAlarmDays() {

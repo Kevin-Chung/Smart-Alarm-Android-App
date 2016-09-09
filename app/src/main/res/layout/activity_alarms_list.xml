@@ -25,11 +25,12 @@
     <include layout="@layout/content_alarms_list" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/add_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        app:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_alarm_on_black_48dp" />
 
 </android.support.design.widget.CoordinatorLayout>
