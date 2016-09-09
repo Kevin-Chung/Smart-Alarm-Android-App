@@ -17,5 +17,7 @@ public class CreateAlarm extends AppCompatActivity {
         setContentView(R.layout.activity_create_alarm);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //eventually create custom UI elemnts
     }
 }
