@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:id="@+id/coordinator_layout"
     tools:context="mobi.smartalarm.Activities.CreateAlarm">
 
     <android.support.design.widget.AppBarLayout
@@ -21,11 +22,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_create_alarm" />
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
+        android:layout_gravity="bottom|left"
         android:layout_margin="20dp"
         android:id="@+id/save_alarm"
         android:text="Save"
@@ -33,10 +33,10 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|right"
         android:layout_margin="20dp"
         android:id="@+id/cancel_alarm"
         android:text="Cancel"
         android:textSize="30dp"/>
-
+    <include layout="@layout/content_create_alarm" />
 </android.support.design.widget.CoordinatorLayout>

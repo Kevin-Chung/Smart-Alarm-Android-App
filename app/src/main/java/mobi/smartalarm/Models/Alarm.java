@@ -1,5 +1,7 @@
 package mobi.smartalarm.Models;
 
+import com.google.android.gms.location.places.Place;
+
 /**
  * Created by Kevin on 5/18/2016.
  */
@@ -8,13 +10,14 @@ public class Alarm {
     private String arrivalTime;
     private String ringTime;
     private String alarmDays;
+    private Place place;
 
     public Alarm(String alarmName, String arrivalTime, String ringTime, String alarmDays) {
         this.alarmName = alarmName;
         this.arrivalTime = arrivalTime;
         this.ringTime = ringTime;
         this.alarmDays = alarmDays;
-
+        this.place = null;
     }
 
     public String getAlarmName() {
